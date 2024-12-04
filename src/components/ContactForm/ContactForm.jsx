@@ -30,16 +30,17 @@ const ContactForm = () => {
         initialValues={{ name: '', number: '' }}
         onSubmit={handleSubmit}
         validationSchema={contactFormSchema}
+        validateOnBlur={false}
       >
         <Form className={s.form}>
           <label className={s.label} htmlFor={nameFieldId}>
             Name
-            <Field type="text" name="name" id={nameFieldId} />
+            <Field className={s.field} type="text" name="name" id={nameFieldId} />
             <ErrorMessage className={s.error} name="name" component="span" />
           </label>
           <label className={s.label} htmlFor={numberFieldId}>
             Number
-            <Field type="text" name="number" id={numberFieldId} />
+            <Field className={s.field} type="text" name="number" id={numberFieldId} />
             <ErrorMessage className={s.error} name="number" component="span" />
           </label>
           <button className={s.button} type="submit">

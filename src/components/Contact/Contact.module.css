@@ -11,6 +11,10 @@ p {
   column-gap: 6px;
 }
 
+p svg {
+  color: #fff;
+}
+
 button {
   padding: 6px 16px;
   height: 40px;
@@ -18,8 +22,13 @@ button {
   border: 1px solid grey;
   border-radius: 8px;
   cursor: pointer;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
+button:hover {
+  color: #fff;
+  background-color: #00ced1;
+}
 button:active {
   background-color: lightgray;
 }

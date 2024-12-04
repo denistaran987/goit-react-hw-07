@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { fetchContacts } from '../redux/contactsOps';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts, selectError, selectLoading } from '../redux/contactsSlice';
+import Loader from './Loader/Loader';
 
 function App() {
   const dispatch = useDispatch();
@@ -18,14 +19,16 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div>
-      <h1>Phonebook</h1>
+    <div className="wrapper">
+      <h1 style={{ fontSize: 40, lineHeight: 1.2 }}>Phonebook</h1>
       <ContactForm />
       <SearchBox />
-      {loading && <p>Loading ...</p>}
       {!loading && !error && contacts.length === 0 && (
-        <p style={{ color: 'red' }}>Sorry, no contacts in Phonebook, please add contact.</p>
+        <p style={{ color: 'red' }}>
+          Sorry, no contacts found. Please add a contact to your phonebook.
+        </p>
       )}
+      {loading && <Loader />}
       <ContactList />
     </div>
   );

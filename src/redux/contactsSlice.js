@@ -40,7 +40,7 @@ const slice = createSlice({
       .addMatcher(
         isAnyOf(fetchContacts.rejected, addContact.rejected, deleteContact.rejected),
         state => {
-          state.error = toast.error('Something went wrong, please try again later', {
+          state.error = toast.error('Oops! Something went wrong. Please try again later.', {
             style: {
               backgroundColor: '#D924247F',
               color: '#fff',
